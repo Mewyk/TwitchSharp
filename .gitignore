@@ -1,0 +1,26 @@
+# Build outputs
+bin/
+obj/
+*.nupkg
+
+# IDE and editor
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Local configuration
+appsettings.Development.json
+
+# DocFX auto generated
+Documentation/Api/
+Documentation/_site/
+
+# Project specific
+Reports/
+Sampler/
+ScratchPad.md
