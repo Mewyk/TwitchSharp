@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>TwitchSharp.Extensions.Authentication</RootNamespace>
+    <AssemblyName>TwitchSharp.Extensions.Authentication</AssemblyName>
+    <Description>Optional authentication convenience utilities for TwitchSharp. Provides interactive browser auth flows, local OAuth callback listener, file-based token persistence, and flow orchestration.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="AuthenticationExtensionsTests" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../TwitchSharp.Api/TwitchSharp.Api.csproj" />
+  </ItemGroup>
+</Project>

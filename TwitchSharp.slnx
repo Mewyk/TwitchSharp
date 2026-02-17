@@ -1,0 +1,18 @@
+<Solution>
+  <Project Path="TwitchSharp/TwitchSharp.csproj" />
+  <Project Path="TwitchSharp.Api/TwitchSharp.Api.csproj" />
+  <Project Path="TwitchSharp.EventSub/TwitchSharp.EventSub.csproj" />
+  <Project Path="TwitchSharp.Hosting/TwitchSharp.Hosting.csproj" />
+  <Folder Name="/SourceGenerators/">
+    <Project Path="SourceGenerators/TwitchSharp.Generators.csproj" />
+  </Folder>
+  <Folder Name="/Extensions/">
+    <Project Path="Extensions/TwitchSharp.Extensions.Authentication/TwitchSharp.Extensions.Authentication.csproj" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/CoreTests/CoreTests.csproj" />
+    <Project Path="Tests/ApiTests/ApiTests.csproj" />
+    <Project Path="Tests/HostingTests/HostingTests.csproj" />
+    <Project Path="Tests/AuthenticationExtensionsTests/AuthenticationExtensionsTests.csproj" />
+  </Folder>
+</Solution>

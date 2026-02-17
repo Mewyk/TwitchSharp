@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>TwitchSharp.Hosting</RootNamespace>
+    <AssemblyName>TwitchSharp.Hosting</AssemblyName>
+    <Description>Dependency injection and hosting integration for TwitchSharp.</Description>
+    <EnableConfigurationBindingGenerator>true</EnableConfigurationBindingGenerator>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="HostingTests" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../TwitchSharp.Api/TwitchSharp.Api.csproj" />
+    <ProjectReference Include="../TwitchSharp.EventSub/TwitchSharp.EventSub.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Http" />
+    <PackageReference Include="Microsoft.Extensions.Options" />
+    <PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" />
+  </ItemGroup>
+</Project>

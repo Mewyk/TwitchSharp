@@ -2,6 +2,8 @@
 
 A .NET 10 library for the Twitch Helix API and EventSub WebSocket, designed for Native AOT from the ground up.
 
+WARNING: This is the first alpha release, which is not fully tested. More updates to come in the next few weeks when the documentation is pushed.
+
 ## Features
 
 - **Full Helix API coverage** -- 30 endpoint categories with typed request/response models

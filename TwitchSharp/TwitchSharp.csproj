@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>TwitchSharp</RootNamespace>
+    <AssemblyName>TwitchSharp</AssemblyName>
+    <Description>Core primitives, exceptions, and shared types for TwitchSharp.</Description>
+  </PropertyGroup>
+</Project>

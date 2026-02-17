@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../../Extensions/TwitchSharp.Extensions.Authentication/TwitchSharp.Extensions.Authentication.csproj" />
+  </ItemGroup>
+</Project>

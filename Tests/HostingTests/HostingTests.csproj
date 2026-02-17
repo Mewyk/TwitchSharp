@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../../TwitchSharp.Hosting/TwitchSharp.Hosting.csproj" />
+  </ItemGroup>
+</Project>

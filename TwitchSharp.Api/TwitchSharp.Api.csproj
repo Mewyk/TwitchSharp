@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>TwitchSharp.Api</RootNamespace>
+    <AssemblyName>TwitchSharp.Api</AssemblyName>
+    <Description>Twitch Helix API client with AOT-first design.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="TwitchSharp.Hosting" />
+    <InternalsVisibleTo Include="ApiTests" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../TwitchSharp/TwitchSharp.csproj" />
+    <ProjectReference Include="../SourceGenerators/TwitchSharp.Generators.csproj"
+                      OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Threading.RateLimiting" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+  </ItemGroup>
+</Project>
