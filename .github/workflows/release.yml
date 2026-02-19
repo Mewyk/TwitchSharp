@@ -180,3 +180,45 @@ jobs:
           Get-ChildItem -Path ./nupkgs -Filter *.nupkg | ForEach-Object {
             "- ``$($_.Name)``" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
           }
+
+  publish-github-packages:
+    name: Publish to GitHub Packages
+    needs: [build-and-test, create-release]
+    runs-on: windows-latest
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      - name: Download NuGet packages
+        uses: actions/download-artifact@v4
+        with:
+          name: nuget-packages
+          path: ./nupkgs
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '10.0.x'
+          source-url: https://nuget.pkg.github.com/Mewyk/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push to GitHub Packages
+        shell: pwsh
+        run: |
+          $packages = Get-ChildItem -Path ./nupkgs -Filter *.nupkg -Recurse
+          if ($packages.Count -eq 0) {
+            Write-Error "No .nupkg files found in ./nupkgs"
+            exit 1
+          }
+          foreach ($package in $packages) {
+            dotnet nuget push $package.FullName --source https://nuget.pkg.github.com/Mewyk/index.json --skip-duplicate
+          }
+
+      - name: Output GitHub Packages information
+        shell: pwsh
+        run: |
+          "## GitHub Packages Published" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+          Get-ChildItem -Path ./nupkgs -Filter *.nupkg | ForEach-Object {
+            "- ``$($_.Name)``" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+          }
