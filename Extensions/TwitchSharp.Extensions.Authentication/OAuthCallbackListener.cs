@@ -134,6 +134,7 @@ public sealed class OAuthCallbackListener : IDisposable
         response.ContentLength64 = buffer.Length;
 
         await response.OutputStream.WriteAsync(buffer).ConfigureAwait(false);
+        await response.OutputStream.FlushAsync().ConfigureAwait(false);
         response.Close();
     }
 
