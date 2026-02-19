@@ -111,6 +111,7 @@ jobs:
             dotnet add package TwitchSharp.Api --version ${{ steps.version.outputs.version }}
             dotnet add package TwitchSharp.Hosting --version ${{ steps.version.outputs.version }}
             dotnet add package TwitchSharp.EventSub --version ${{ steps.version.outputs.version }}
+            dotnet add package TwitchSharp.Extensions.Authentication --version ${{ steps.version.outputs.version }}
             ```
 
             ### What's Changed
