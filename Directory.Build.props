@@ -7,32 +7,35 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-
-    <!-- AOT and trimming -->
     <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
     <IsTrimmable>true</IsTrimmable>
     <IsAotCompatible>true</IsAotCompatible>
-
-    <!-- Disable reflection-based JSON serialization -->
     <JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>
   </PropertyGroup>
 
   <PropertyGroup>
-    <Authors>TwitchSharp Contributors</Authors>
-    <Copyright>Copyright (c) TwitchSharp Contributors</Copyright>
+    <Authors>Mewyk</Authors>
+    <Copyright>Mewyk</Copyright>
     <Description>A .NET library for the Twitch API with AOT-first design and source-generated JSON serialization.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>Logo.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
-    <VersionPrefix>0.1.0</VersionPrefix>
     <RepositoryUrl>https://github.com/Mewyk/TwitchSharp.git</RepositoryUrl>
     <PackageProjectUrl>https://github.com/Mewyk/TwitchSharp</PackageProjectUrl>
     <PackageTags>twitch;helix;api;eventsub;websocket;aot;native-aot;streaming</PackageTags>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+    <MinVerMinimumMajorMinor>0.1</MinVerMinimumMajorMinor>
+    <MinVerDefaultPreReleaseIdentifiers>alpha</MinVerDefaultPreReleaseIdentifiers>
+    <MinVerAutoIncrement>minor</MinVerAutoIncrement>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="\" />
     <None Include="$(MSBuildThisFileDirectory)Resources\Logo.png" Pack="true" PackagePath="\" />
+    <PackageReference Include="MinVer" PrivateAssets="All" />
   </ItemGroup>
 </Project>
